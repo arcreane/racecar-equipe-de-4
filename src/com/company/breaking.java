@@ -1,14 +1,11 @@
 package com.company;
 import java.util.Random;
-import java.util.stream.IntStream;
-import java.util.OptionalInt;
 
 public class breaking {
     public static void IsCarBroken(){
         Random rand = new Random();
         int breaking = rand.nextInt(100);
         boolean IsBreak = false;
-        System.out.println(breaking);
         for (int n = 1; n <= 35; n++) {
             if (n == breaking) {
                 IsBreak = true;
