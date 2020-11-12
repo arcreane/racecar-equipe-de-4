@@ -19,17 +19,15 @@ public class time extends Thread{
     }
 
     public static void timer() throws InterruptedException {
-        for (int m = 10;m>0;m--){
-            System.out.println(m);
-            n++;
-            sleep(1000);
-        }
+        sleep(10000);
+        System.out.println("TimeOut");
+        n = n+10;
     }
     public void run(){
         n = 0;
         while (true){
-            n++;
             try {
+                n++;
                 Print(n);
             } catch (InterruptedException e) {
                 e.printStackTrace();
