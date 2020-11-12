@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Random;
+import java.util.stream.LongStream;
+
 public class time extends Thread{
     public static int n;
     public static boolean canPrint = true;
@@ -18,26 +21,15 @@ public class time extends Thread{
         }
     }
 
-    public static void timer() throws InterruptedException {
-        sleep(10000);
-        System.out.println("TimeOut");
-        n = n+10;
-    }
     public void run(){
         n = 0;
         while (true){
             try {
                 n++;
                 Print(n);
+                breaking.IsCarBroken();
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
-            if (n == 5){
-                try {
-                    breaking.IsCarBroken();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
