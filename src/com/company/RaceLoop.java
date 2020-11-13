@@ -7,6 +7,7 @@ public class RaceLoop {
     public static int nombreTours = 0;
     public static int vitesse;
     public static Random rdm = new Random();
+    public static int t;
 
     public static void init(){
         if (menu.Car == "FAST"){
@@ -27,7 +28,12 @@ public class RaceLoop {
                 int nombreAléatoire = rdm.nextInt(4);
                 if (nombreAléatoire%4 == 0){
                     boost.BoostCar();
+                    t = time.n;
                 }
+            }
+            if (time.n == t+5){
+                vitesse = 14;
+                System.out.println("BOOST FINI");
             }
         }
         RaceDistance = RaceDistance - vitesse;
