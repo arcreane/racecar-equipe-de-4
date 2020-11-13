@@ -35,6 +35,7 @@ public class RaceLoop {
             if (time.n%1 == 0){
                 int nombreAléatoire = rdm.nextInt(4);
                 if (nombreAléatoire%4 == 0){
+                    vitesse = 14;
                     boost.BoostCar();
                     t = time.n;
                 }
