@@ -14,10 +14,10 @@ public class RaceLoop {
      */
     public static void init(){
         if (menu.Car == "FAST"){
-            vitesse = 28;
+            vitesse = 280;
         }
         else if (menu.Car == "SLOW"){
-            vitesse = 14;
+            vitesse = 140;
         }
     }
 
@@ -32,7 +32,7 @@ public class RaceLoop {
             }
         }
         if (menu.Car == "SLOW"){
-            if (time.n%1 == 0){
+            if (time.n%1 == 0 && RaceLoop.vitesse == 140){
                 int nombreAléatoire = rdm.nextInt(4);
                 if (nombreAléatoire%4 == 0){
                     boost.BoostCar();
@@ -40,13 +40,13 @@ public class RaceLoop {
                 }
             }
             if (time.n == t+5){
-                vitesse = 14;
+                vitesse = 140;
                 System.out.println("BOOST FINI");
             }
         }
         RaceDistance = RaceDistance - vitesse;
         if (RaceDistance <= 0){
-            RaceDistance = 10000;
+            RaceDistance = 10000 + RaceDistance;
             nombreTours++;
         }
         if (nombreTours == 5){

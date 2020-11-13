@@ -17,7 +17,7 @@ public class menu {
         char choix;
 
         System.out.println(" | ---------------------------- | ");
-        System.out.println(ansi().eraseScreen().fg(MAGENTA).a("    Bienvenue dans Race Car").reset());
+        System.out.println(ansi().eraseScreen().fg(MAGENTA).a(" |   Bienvenue dans Race Car    |").reset());
         System.out.println(" | ---------------------------- | ");
 
         System.out.println(" Choisissez votre voiture ");
