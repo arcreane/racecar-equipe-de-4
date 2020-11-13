@@ -25,13 +25,14 @@ public class menu {
 
         if (choix == '1') {
             System.out.println("Vous avez choisi la voiture rapide");
-            couleur();
+            RaceLoop.FastCar = true;
         }
 
         else{ // si l'utilisateur entre le chiffre 2
             System.out.println("Vous avez choisi la voiture lente");
-            couleur();
+            RaceLoop.FastCar = false;
         }
+        couleur();
     }
     private static void couleur(){
         char couleur;

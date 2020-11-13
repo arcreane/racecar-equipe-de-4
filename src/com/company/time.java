@@ -1,19 +1,27 @@
 package com.company;
 
-import java.util.Random;
-import java.util.stream.LongStream;
+import java.util.TimerTask;
 
 public class time extends Thread{
     public static int n;
+    public static int m;
     public static boolean canPrint = true;
 
     public time(String name){
         super(name);
     }
 
-    public void Print(int n) throws InterruptedException {
+    /***
+     * @throws InterruptedException
+     */
+    public void Print() throws InterruptedException {
         if (canPrint){
-            System.out.println(n);
+            if (n>=60){
+                m++;
+                n = n-60;
+            }
+            System.out.println(m + " minute(s)"+" et "+ n + " seconde(s)");
+            System.out.println(RaceLoop.RaceDistance);
             sleep(1000);
             for(int m  = 0; m<10; m++){
                 System.out.println(" ");
@@ -23,11 +31,12 @@ public class time extends Thread{
 
     public void run(){
         n = 0;
+        m = 0;
         while (true){
             try {
                 n++;
-                Print(n);
-                breaking.IsCarBroken();
+                Print();
+                RaceLoop.Race();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
