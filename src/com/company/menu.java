@@ -4,6 +4,7 @@ import static org.fusesource.jansi.Ansi.Color.*;
 import static org.fusesource.jansi.Ansi.ansi;
 
 public class menu {
+    public static String Car;
     public static void menu(){
         AnsiConsole.systemUninstall();
 
@@ -15,32 +16,37 @@ public class menu {
         System.out.println(ansi().eraseScreen().fg(MAGENTA).a("    Bienvenu dans Race Car").reset());
         System.out.println(" | ---------------------------- | ");
 
-        System.out.println(" Choisir entre 2 voiture ");
+        System.out.println(" Choisissez votre voiture ");
         System.out.println(" ");
-        System.out.println(" Type 1, voiture rapide, mais 30% de chance de casse: ");
-        System.out.println(" Type 2, voiture lente, mais 50% de chance d'obtenir un boost ");
+        System.out.println("(1) Voiture rapide, mais 35% de chance de casse: ");
+        System.out.println("(2) Voiture lente, mais 25% de chance d'obtenir un boost ");
         System.out.println(" ");
 
         choix = scanner.next().charAt(0);
 
         if (choix == '1') {
             System.out.println("Vous avez choisi la voiture rapide");
-            RaceLoop.FastCar = true;
+            Car = "FAST";
         }
 
-        else{ // si l'utilisateur entre le chiffre 2
+        else if (choix == '2'){ // si l'utilisateur entre le chiffre 2
             System.out.println("Vous avez choisi la voiture lente");
-            RaceLoop.FastCar = false;
+            Car = "SLOW";
+        }
+        else{
+            System.out.println("Erreur, veuillez réessayer");
+            menu();
         }
         couleur();
     }
     private static void couleur(){
         char couleur;
-        System.out.println("Choisir une couleur : (1) Jaune , (2) Bleu , (3) Noire ");
+        System.out.println("Choisissez une couleur : (1) Jaune , (2) Bleu , (3) Noire ");
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         couleur = scanner.next().charAt(0);
             if (couleur == '1') {
                 System.out.println(ansi().eraseScreen().fg(YELLOW).a("Vous avez choisi la voiture jaune").reset());
+
             }
             if (couleur == '2') {
                 System.out.println(ansi().eraseScreen().fg(BLUE).a("Vous avez choisi la voiture bleu").reset());
