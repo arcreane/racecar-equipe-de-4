@@ -10,6 +10,7 @@ public class Display {
                 time.m++;
                 time.n = time.n-60;
             }
+            System.out.println("Vitesse de : " + RaceLoop.vitesse + " m/s");
             System.out.println(time.m + " minute(s)"+" et "+ time.n + " seconde(s)");
             System.out.println(RaceLoop.RaceDistance + " mètres");
             System.out.println("Tour numéro : " + RaceLoop.nombreTours + "/5");
