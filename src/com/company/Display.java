@@ -3,6 +3,7 @@ package com.company;
 public class Display {
     /***
      * @throws InterruptedException
+     * Affiche les informations
      */
     public static void Print() throws InterruptedException {
         if (time.canPrint){

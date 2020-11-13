@@ -9,6 +9,9 @@ public class RaceLoop {
     public static Random rdm = new Random();
     public static int t;
 
+    /***
+     * Initialise le paramètre de vitesse
+     */
     public static void init(){
         if (menu.Car == "FAST"){
             vitesse = 28;
@@ -17,6 +20,11 @@ public class RaceLoop {
             vitesse = 14;
         }
     }
+
+    /***
+     * La boucle de course, qui calcule la vitesse, la distance, les tours, et les évenements
+     * @throws InterruptedException
+     */
     public static void Race() throws InterruptedException {
         if (menu.Car == "FAST"){
             if(time.n%3 == 2){

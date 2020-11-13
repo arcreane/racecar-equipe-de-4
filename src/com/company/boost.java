@@ -6,6 +6,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class boost {
+    /***
+     * Si l'utilisateur choisi une voiture lente, il peut avoir un boost
+     * L'utilsateur doit reécrire un mot qui est affiché
+     */
     public static void BoostCar(){
         Instant start = Instant.now();
         Random rd = new Random();

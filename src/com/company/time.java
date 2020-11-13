@@ -9,6 +9,9 @@ public class time extends Thread{
         super(name);
     }
 
+    /***
+     * Le thread qui permet de créer le temps
+     */
     public void run(){
         n = 0;
         m = 0;

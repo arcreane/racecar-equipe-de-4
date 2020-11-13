@@ -3,6 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Affiche que la partie est finie, montre le temps et quitte le jeu
+     */
     public static void end(){
         System.out.println("La partie est finie");
         System.out.println("Votre temps est de :");
