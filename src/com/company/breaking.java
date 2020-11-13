@@ -5,6 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class breaking {
+    /***
+     * Teste si la Voiture est cassée, il y a 35% de chance qu'elle le soit
+     * Si elle est cassée, elle appelle la fonction WhatPartIsBroken;
+     */
     public static void IsCarBroken() throws InterruptedException {
         Random rand = new Random();
         int breaking = rand.nextInt(100);
@@ -18,6 +22,11 @@ public class breaking {
             }
         }
     }
+
+    /***
+     * @param inputString La variable de type String a modifier
+     * @return la variable mélangée
+     */
     public static String StringRandom(String inputString) {
         Random random = new Random();
         //Convert your string into a simple char array:
@@ -35,6 +44,10 @@ public class breaking {
         return b;
     }
 
+    /***
+     * @param Part La partie cassée de la voiture
+     * @throws InterruptedException
+     */
     private static void WhatPartIsBroken(int Part) throws InterruptedException {
         Instant start = Instant.now();
         if(Part == 0){
