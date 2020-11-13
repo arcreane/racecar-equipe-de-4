@@ -1,9 +1,12 @@
 package com.company;
 
+import java.util.Random;
+
 public class RaceLoop {
     public static int RaceDistance = 10000;
     public static int nombreTours = 0;
     public static int vitesse;
+    public static Random rdm = new Random();
 
     public static void init(){
         if (menu.Car == "FAST"){
@@ -17,6 +20,14 @@ public class RaceLoop {
         if (menu.Car == "FAST"){
             if(time.n%3 == 2){
                 breaking.IsCarBroken();
+            }
+        }
+        if (menu.Car == "SLOW"){
+            if (time.n%1 == 0){
+                int nombreAléatoire = rdm.nextInt(4);
+                if (nombreAléatoire%4 == 0){
+                    boost.BoostCar();
+                }
             }
         }
         RaceDistance = RaceDistance - vitesse;
