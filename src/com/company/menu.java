@@ -62,9 +62,5 @@ public class menu {
             if (couleur == '3') {//Si l'utilisateur entre le chiffre 3
                 System.out.println(ansi().eraseScreen().fg(BLACK).a("Vous avez choisi la voiture noire").reset());
             }
-            else{//Si l'utilisateur se trompe
-                System.out.println("Veuillez entrer une commande valide");
-                couleur();
-            }
         }
     }
